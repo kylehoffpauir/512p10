@@ -401,7 +401,11 @@ class VPIAgent(BayesAgent):
         rightExpectedValue = 0
 
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        ev = evidence.copy()
+        factor = inference.inferenceByVariableElimination(self.bayesNet,
+                                                      FOOD_HOUSE_VAR,
+                                                      ev,
+                                                      eliminationOrder)
         "*** END YOUR CODE HERE ***"
 
         return leftExpectedValue, rightExpectedValue
